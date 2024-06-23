@@ -1,0 +1,24 @@
+{
+	"name": "jaymeh/content-page-block",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Jaymeh\\ContentPageBlock\\": "src/",
+			"Jaymeh\\ContentPageBlock\\Tests\\": "tests/",
+			"Jaymeh\\ContentPageBlock\\Database\\Factories\\": "database/factories/",
+			"Jaymeh\\ContentPageBlock\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Jaymeh\\ContentPageBlock\\Providers\\ContentPageBlockServiceProvider"
+			]
+		}
+	}
+}
