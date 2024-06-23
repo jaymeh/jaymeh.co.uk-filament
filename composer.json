@@ -12,7 +12,7 @@
         "filament/filament": "^3.2",
         "filament/forms": "^3.2",
         "internachi/modular": "^2.2",
-        "jaymeh/content-page-block": "*",
+        "jaymeh/content-page-blocks": "*",
         "jaymeh/filament-pages": "^1.1",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"

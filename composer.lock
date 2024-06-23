@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "656a7d1fc109d1b543f512de93aa892a",
+    "content-hash": "d5555ca6d149f2b2c3415eb8c321fffb",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2888,12 +2888,12 @@
             "time": "2024-04-06T00:59:47+00:00"
         },
         {
-            "name": "jaymeh/content-page-block",
+            "name": "jaymeh/content-page-blocks",
             "version": "1.0",
             "dist": {
                 "type": "path",
-                "url": "app-modules/content-page-block",
-                "reference": "d1e8f2038289e59142e5a0000abf4b6fb13bc84c"
+                "url": "app-modules/content-page-blocks",
+                "reference": "7e8dd7f79aba3d1eb6e442e8c8bf203f594b9ef8"
             },
             "require": {
                 "filament/forms": "^3.2"
@@ -2902,16 +2902,16 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Jaymeh\\ContentPageBlock\\Providers\\ContentPageBlockServiceProvider"
+                        "Jaymeh\\ContentPageBlocks\\Providers\\ContentPageBlocksServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Jaymeh\\ContentPageBlock\\": "src/",
-                    "Jaymeh\\ContentPageBlock\\Tests\\": "tests/",
-                    "Jaymeh\\ContentPageBlock\\Database\\Factories\\": "database/factories/",
-                    "Jaymeh\\ContentPageBlock\\Database\\Seeders\\": "database/seeders/"
+                    "Jaymeh\\ContentPageBlocks\\": "src/",
+                    "Jaymeh\\ContentPageBlocks\\Tests\\": "tests/",
+                    "Jaymeh\\ContentPageBlocks\\Database\\Factories\\": "database/factories/",
+                    "Jaymeh\\ContentPageBlocks\\Database\\Seeders\\": "database/seeders/"
                 }
             },
             "license": [
