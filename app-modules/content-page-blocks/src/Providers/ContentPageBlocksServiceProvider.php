@@ -25,5 +25,15 @@ class ContentPageBlocksServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', static::$viewNamespace);
+
+        $this->publishes(
+            [
+                __DIR__.'/../../resources/views' => resource_path('views/vendor/' . static::$viewNamespace),
+            ],
+            [
+                'content-page-blocks',
+                'content-page-blocks-views'
+            ]
+        );
     }
 }

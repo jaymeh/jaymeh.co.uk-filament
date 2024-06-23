@@ -107,8 +107,8 @@ class PostResource extends Resource
                                 ->helperText(
                                     'The URL of the page.'
                                 ),
-                            CuratorPicker::make('featured_image')
-                                ->relationship('featured_image', 'id')
+                            CuratorPicker::make('featured_image_id')
+                                ->relationship('featuredImage', 'id')
                                 ->required(),
                         ])->columnSpan([
                             'md' => 1,

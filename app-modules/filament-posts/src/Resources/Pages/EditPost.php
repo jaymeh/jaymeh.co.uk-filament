@@ -2,9 +2,9 @@
 
 namespace Jaymeh\FilamentPosts\Resources\Pages;
 
-use Jaymeh\FilamentPosts\Resources\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Jaymeh\FilamentPosts\Resources\PostResource;
 
 class EditPost extends EditRecord
 {
