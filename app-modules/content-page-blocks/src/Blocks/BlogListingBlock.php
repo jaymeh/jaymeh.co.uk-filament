@@ -2,9 +2,11 @@
 
 namespace Jaymeh\ContentPageBlocks\Blocks;
 
+use Filament\Forms\Get;
+use Jaymeh\Posts\Models\Post;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Get;
+use Illuminate\Database\Eloquent\Collection;
 use Jaymeh\FilamentDynamicBuilder\Abstracts\PageBlockAbstract;
 
 class BlogListingBlock extends PageBlockAbstract
@@ -76,9 +78,10 @@ class BlogListingBlock extends PageBlockAbstract
      * Gets the posts to associate with the block.
      *
      * @param array $attributes
+     *
      * @return Collection
      */
-    private function getPosts(array $attributes): array
+    private function getPosts(array $attributes): Collection
     {
         $posts = [];
 
