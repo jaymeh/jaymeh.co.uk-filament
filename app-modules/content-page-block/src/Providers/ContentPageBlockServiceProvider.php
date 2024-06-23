@@ -11,8 +11,4 @@ class ContentPageBlockServiceProvider extends ServiceProvider
     {
         new BlogListingBlock();
     }
-
-    public function boot(): void
-    {
-    }
 }
