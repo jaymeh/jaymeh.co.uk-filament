@@ -2893,7 +2893,10 @@
             "dist": {
                 "type": "path",
                 "url": "app-modules/content-page-block",
-                "reference": "517b55c6c655f0cb63f119012f2ff3da9e4dc546"
+                "reference": "d1e8f2038289e59142e5a0000abf4b6fb13bc84c"
+            },
+            "require": {
+                "filament/forms": "^3.2"
             },
             "type": "library",
             "extra": {
@@ -2992,16 +2995,16 @@
         },
         {
             "name": "jaymeh/filament-pages",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jaymeh/filament-pages.git",
-                "reference": "be6b99949497320990ebb593db614aaf20554ecb"
+                "reference": "864a884c185ba2973f5d3d0ffe1e7aadc2b23a2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jaymeh/filament-pages/zipball/be6b99949497320990ebb593db614aaf20554ecb",
-                "reference": "be6b99949497320990ebb593db614aaf20554ecb",
+                "url": "https://api.github.com/repos/jaymeh/filament-pages/zipball/864a884c185ba2973f5d3d0ffe1e7aadc2b23a2f",
+                "reference": "864a884c185ba2973f5d3d0ffe1e7aadc2b23a2f",
                 "shasum": ""
             },
             "require": {
@@ -3066,7 +3069,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-23T09:39:01+00:00"
+            "time": "2024-06-23T10:26:39+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
