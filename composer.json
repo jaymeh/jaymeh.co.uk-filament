@@ -17,7 +17,6 @@
         "jaymeh/filament-pages": "^1.1",
         "jaymeh/filament-posts": "*",
         "jaymeh/posts": "*",
-        "jaymeh/tags": "*",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
