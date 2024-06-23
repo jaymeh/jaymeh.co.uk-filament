@@ -7,6 +7,7 @@ use Jaymeh\Posts\Models\Post;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Collection;
+use Jaymeh\Posts\Repositories\PostRepository;
 use Jaymeh\FilamentDynamicBuilder\Abstracts\PageBlockAbstract;
 
 class BlogListingBlock extends PageBlockAbstract
@@ -85,10 +86,12 @@ class BlogListingBlock extends PageBlockAbstract
     {
         $posts = [];
 
+        $postRepository = resolve(PostRepository::class);
+
         if ($attributes['paginate']) {
-            $posts = Post::paginate($attributes['per_page']);
+            $posts = $postRepository->paginate($attributes['per_page']);
         } else {
-            $posts = Post::limit($attributes['amount_of_posts'])->get();
+            $posts = $postRepository->limit($attributes['amount_of_posts'])->get();
         }
 
         return $posts;

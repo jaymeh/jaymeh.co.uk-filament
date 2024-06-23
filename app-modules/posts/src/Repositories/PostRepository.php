@@ -1,5 +1,9 @@
 <?php
 
+namespace Jaymeh\Posts\Repositories;
+
+use Creode\LaravelRepository\BaseRepository;
+
 class PostRepository extends BaseRepository
 {
     /**

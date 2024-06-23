@@ -1,0 +1,28 @@
+{
+	"name": "jaymeh/filament-posts",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {
+        "awcodes/filament-curator": "^3.0",
+        "filament/spatie-laravel-tags-plugin":"^3.2",
+        "jaymeh/posts": "*"
+    },
+	"autoload": {
+		"psr-4": {
+			"Jaymeh\\FilamentPosts\\": "src/",
+			"Jaymeh\\FilamentPosts\\Tests\\": "tests/",
+			"Jaymeh\\FilamentPosts\\Database\\Factories\\": "database/factories/",
+			"Jaymeh\\FilamentPosts\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Jaymeh\\FilamentPosts\\Providers\\FilamentPostsServiceProvider"
+			]
+		}
+	}
+}

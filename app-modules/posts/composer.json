@@ -6,8 +6,8 @@
 	"license": "proprietary",
 	"require": {
         "creode/laravel-repository": "^1.0",
-        "jaymeh/tags": "*",
-        "pawelmysior/laravel-publishable": "^3.0 | ^4.0"
+        "pawelmysior/laravel-publishable": "^3.0 | ^4.0",
+        "spatie/laravel-tags": "^4.0"
     },
 	"autoload": {
 		"psr-4": {

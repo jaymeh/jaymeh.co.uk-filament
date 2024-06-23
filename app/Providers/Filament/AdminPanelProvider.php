@@ -9,6 +9,7 @@ use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Http\Middleware\Authenticate;
 use Jaymeh\FilamentPages\FilamentPagesPlugin;
+use Jaymeh\FilamentPosts\FilamentPostsPlugin;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -28,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -54,6 +56,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 new FilamentPagesPlugin,
+                new FilamentPostsPlugin,
+                \Awcodes\Curator\CuratorPlugin::make(),
             ])
             ->authMiddleware([
                 Authenticate::class,
