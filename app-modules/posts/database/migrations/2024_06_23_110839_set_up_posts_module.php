@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 return new class() extends Migration {
     public function up()
     {
-        Schema::create('posts', function(Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamp('published_at')->nullable();
             $table->string('title');
