@@ -1,0 +1,24 @@
+{
+	"name": "jaymeh/filament-tags",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Jaymeh\\FilamentTags\\": "src/",
+			"Jaymeh\\FilamentTags\\Tests\\": "tests/",
+			"Jaymeh\\FilamentTags\\Database\\Factories\\": "database/factories/",
+			"Jaymeh\\FilamentTags\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Jaymeh\\FilamentTags\\Providers\\FilamentTagsServiceProvider"
+			]
+		}
+	}
+}
