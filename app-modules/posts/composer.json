@@ -1,0 +1,28 @@
+{
+	"name": "jaymeh/posts",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {
+        "creode/laravel-repository": "^1.0",
+        "jaymeh/tags": "*",
+        "pawelmysior/laravel-publishable": "^3.0 | ^4.0"
+    },
+	"autoload": {
+		"psr-4": {
+			"Jaymeh\\Posts\\": "src/",
+			"Jaymeh\\Posts\\Tests\\": "tests/",
+			"Jaymeh\\Posts\\Database\\Factories\\": "database/factories/",
+			"Jaymeh\\Posts\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Jaymeh\\Posts\\Providers\\PostsServiceProvider"
+			]
+		}
+	}
+}

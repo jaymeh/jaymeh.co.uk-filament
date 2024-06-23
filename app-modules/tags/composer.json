@@ -1,0 +1,27 @@
+{
+    "name": "jaymeh/tags",
+    "description": "",
+    "type": "library",
+    "version": "1.0",
+    "license": "proprietary",
+    "require": {
+        "creode/laravel-repository": "^1.0",
+        "spatie/laravel-tags": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jaymeh\\Tags\\": "src/",
+            "Jaymeh\\Tags\\Tests\\": "tests/",
+            "Jaymeh\\Tags\\Database\\Factories\\": "database/factories/",
+            "Jaymeh\\Tags\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jaymeh\\Tags\\Providers\\TagsServiceProvider"
+            ]
+        }
+    }
+}
