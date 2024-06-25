@@ -3,7 +3,6 @@
 namespace Jaymeh\ContentPageBlocks\Blocks;
 
 use Filament\Forms\Get;
-use Jaymeh\Posts\Models\Post;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Collection;
@@ -27,18 +26,11 @@ class BlogListingBlock extends PageBlockAbstract
     protected $name = 'blog_listing_block';
 
     /**
-     * Any fields associated with the Page Block.
-     *
-     * @var array
-     */
-    protected $fields = [];
-
-    /**
      * Blade view associated with the Page Block.
      *
      * @var string
      */
-    protected $view = 'content-page-blocks::blocks.blog-listing-block';
+    protected $view = 'page-blocks::blocks.blog-listing-block';
 
     /**
      * {@inheritdoc}

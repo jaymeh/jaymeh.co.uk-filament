@@ -1,3 +1,210 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* This is all you. */
+* {
+    @apply text-cinder;
+}
+
+body {
+    @apply bg-gray-200;
+}
+
+h1 {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply text-fuchsia-pink;
+}
+
+h2 {
+    @apply text-xl;
+    @apply font-bold;
+    @apply text-fuchsia-pink;
+}
+
+h3 {
+    @apply text-lg;
+    @apply font-bold;
+}
+
+p {
+    line-height: 1.75;
+}
+
+a {
+    @apply text-governor-bay;
+    @apply font-bold;
+}
+
+a:hover {
+    @apply text-picton-blue;
+    @apply underline;
+}
+
+a.button {
+    @apply bg-fuchsia-pink-600;
+    @apply text-white;
+    @apply p-2;
+    @apply rounded;
+}
+
+a.button:hover {
+    @apply bg-fuchsia-pink-400;
+}
+
+a.button.active {
+    @apply bg-governor-bay-400;
+}
+
+input {
+    @apply border-solid;
+    @apply border-2;
+    @apply border-cinder;
+    @apply w-full;
+    @apply bg-cinder;
+    @apply rounded-md;
+    @apply text-white;
+    @apply p-2;
+}
+
+textarea {
+    @apply border-solid;
+    @apply border-2;
+    @apply border-cinder;
+    @apply w-full;
+    @apply bg-cinder;
+    @apply rounded-md;
+    @apply text-white;
+    @apply p-2;
+}
+
+button,
+[type="submit"] {
+    @apply bg-fuchsia-pink;
+    @apply text-white;
+    @apply p-2;
+    @apply rounded;
+}
+
+button,
+[type="submit"]:hover {
+    @apply bg-fuchsia-pink-400;
+}
+
+div p:not(:first-child) {
+    margin-top: 1em;
+}
+
+pre {
+    @apply bg-cinder;
+    @apply p-4;
+    @apply text-white;
+    @apply my-4;
+    @apply overflow-x-scroll;
+}
+
+figure {
+    @apply p-4;
+    @apply text-center;
+}
+
+figure img {
+    @apply inline-block;
+}
+
+figure figcaption {
+    @apply p-4;
+    @apply bg-cinder;
+    @apply text-white;
+}
+
+.page-content figcaption {
+    @apply w-1/2;
+    @apply mx-auto;
+    @apply mt-1;
+}
+
+.page-content h3 {
+    @apply text-fuchsia-pink-600;
+    @apply mt-4;
+}
+
+.page-content h2:not(:first-child) {
+    @apply mt-4;
+}
+
+.page-container {
+    @apply max-w-screen-xl;
+    @apply flex;
+    @apply flex-col;
+    @apply mb-4;
+    @apply mx-2;
+    @apply gap-4;
+    @apply items-start;
+
+    @screen sm {
+        @apply mx-4;
+    }
+
+    @screen lg {
+        @apply flex-row;
+    }
+
+    @screen xl {
+        @apply mx-auto;
+    }
+}
+
+.article-container {
+    @apply bg-white;
+    @apply p-4;
+    @apply shadow-xl;
+    @apply rounded-xl;
+    @apply w-full;
+
+    @screen md {
+        @apply p-8;
+    }
+
+    @screen xl {
+        @apply basis-8/12;
+    }
+}
+
+.blog-posts-container {
+    @apply bg-white;
+    @apply p-4;
+    @apply shadow-xl;
+    @apply rounded-xl;
+    @apply max-w-screen-xl;
+    @apply mb-4;
+
+    @screen sm {
+        @apply mx-4;
+    }
+
+    @screen md {
+        @apply p-8;
+        @apply mx-0;
+    }
+
+    @screen xl {
+        @apply mx-auto;
+    }
+}
+
+.mobile-link {
+    &:hover {
+        @apply bg-black;
+    }
+
+    @apply text-fuchsia-500;
+    @apply font-bold;
+    @apply text-lg;
+    @apply block;
+    @apply p-4;
+    @apply border-b-2;
+    @apply border-gray-600/60;
+    @apply border-solid;
+}

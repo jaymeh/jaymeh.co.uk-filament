@@ -4,6 +4,7 @@ namespace Jaymeh\ContentPageBlocks\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Jaymeh\ContentPageBlocks\Blocks\BlogListingBlock;
+use Jaymeh\ContentPageBlocks\Blocks\HeaderBannerBlock;
 
 class ContentPageBlocksServiceProvider extends ServiceProvider
 {
@@ -12,11 +13,10 @@ class ContentPageBlocksServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public static string $viewNamespace = 'content-page-blocks';
+    public static string $viewNamespace = 'page-blocks';
 
     public function register(): void
     {
-        new BlogListingBlock();
     }
 
     /**
@@ -24,7 +24,7 @@ class ContentPageBlocksServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', static::$viewNamespace);
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', static::$viewNamespace);
 
         $this->publishes(
             [
@@ -35,5 +35,8 @@ class ContentPageBlocksServiceProvider extends ServiceProvider
                 'content-page-blocks-views'
             ]
         );
+
+        new BlogListingBlock();
+        new HeaderBannerBlock();
     }
 }

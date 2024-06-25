@@ -6,14 +6,14 @@ use Illuminate\Support\ServiceProvider;
 
 class FilamentPostsServiceProvider extends ServiceProvider
 {
-    public static $viewsNamespace = 'filament-posts';
+    public static $viewsNamespace = 'posts-filament';
 
-	public function register(): void
-	{
-	}
+    public function register(): void
+    {
+    }
 
-	public function boot(): void
-	{
+    public function boot(): void
+    {
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         $this->publishesMigrations([
@@ -27,7 +27,9 @@ class FilamentPostsServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__.'/../../resources/views' => resource_path('views/vendor/' . static::$viewsNamespace),
+                __DIR__.'/../../resources/views' => resource_path(
+                    'views/vendor/' . static::$viewsNamespace
+                ),
             ],
             [
                 'filament-posts',
@@ -36,3 +38,4 @@ class FilamentPostsServiceProvider extends ServiceProvider
         );
     }
 }
+
