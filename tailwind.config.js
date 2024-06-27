@@ -1,4 +1,5 @@
-import preset from './vendor/filament/support/tailwind.config.preset'
+import preset from './vendor/filament/support/tailwind.config.preset';
+const colors = require('tailwindcss/colors');
 
 export default {
     presets: [preset],
@@ -11,6 +12,7 @@ export default {
     theme: {
         extend: {
             colors: {
+                ...colors,
                 'cinder': {
                     DEFAULT: '#15101E',
                     '50': '#A998C8',
