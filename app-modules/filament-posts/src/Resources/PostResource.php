@@ -16,6 +16,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Jaymeh\FilamentPosts\Resources\Pages;
@@ -124,7 +125,31 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Columns\TextColumn::make('title')
+                    ->searchable()
+                    ->sortable(),
+                Columns\TextColumn::make('slug')
+                    ->searchable(),
+                Columns\IconColumn::make('published_at')
+                    ->state(function (Post $record): float {
+                        return $record->isPublished();
+                    })
+                    ->icon(function (Post $record): string {
+                        return $record->isPublished() ? 'heroicon-o-check-circle' : 'heroicon-o-x-circle';
+                    })
+                    ->color(function (Post $record): string {
+                        return $record->isPublished() ? 'success' : 'danger';
+                    }),
+                Columns\IconColumn::make('featured_post')
+                    ->state(function (Post $record): float {
+                        return is_null($record->featured_post);
+                    })
+                    ->icon(function (Post $record): string {
+                        return $record->featured_post ? 'heroicon-o-check-circle' : 'heroicon-o-x-circle';
+                    })
+                    ->color(function (Post $record): string {
+                        return $record->featured_post ? 'warning' : 'danger';
+                    }),
             ])
             ->filters([
                 //
