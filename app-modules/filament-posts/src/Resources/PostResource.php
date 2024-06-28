@@ -145,7 +145,7 @@ class PostResource extends Resource
                         return is_null($record->featured_post);
                     })
                     ->icon(function (Post $record): string {
-                        return $record->featured_post ? 'heroicon-o-check-circle' : 'heroicon-o-x-circle';
+                        return $record->featured_post ? 'heroicon-s-check-circle' : 'heroicon-s-x-circle';
                     })
                     ->color(function (Post $record): string {
                         return $record->featured_post ? 'warning' : 'danger';
