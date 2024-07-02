@@ -10,7 +10,7 @@ class FilamentTagsPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'posts';
+        return 'tags';
     }
 
     public function register(Panel $panel): void

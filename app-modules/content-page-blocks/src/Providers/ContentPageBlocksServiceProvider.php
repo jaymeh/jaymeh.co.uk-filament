@@ -3,6 +3,7 @@
 namespace Jaymeh\ContentPageBlocks\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Jaymeh\ContentPageBlocks\Blocks\CategoryBlock;
 use Jaymeh\ContentPageBlocks\Blocks\BlogListingBlock;
 use Jaymeh\ContentPageBlocks\Blocks\HeaderBannerBlock;
 
@@ -38,5 +39,6 @@ class ContentPageBlocksServiceProvider extends ServiceProvider
 
         new BlogListingBlock();
         new HeaderBannerBlock();
+        new CategoryBlock();
     }
 }

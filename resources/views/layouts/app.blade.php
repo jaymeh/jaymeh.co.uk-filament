@@ -29,13 +29,11 @@
     <body class="font-sans leading-normal text-cinder">
         @include('partials.header')
 
-
         @yield('content')
 
         <div class="basis-4/12 w-full">
             @yield('sidebar')
         </div>
-        {{-- <script src="{{ mix src='/js/site.js' }}"></script> --}}
 
         @include('partials.footer')
     </body>

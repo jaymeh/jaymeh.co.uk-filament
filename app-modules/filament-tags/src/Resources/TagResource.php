@@ -32,12 +32,12 @@ class TagResource extends Resource
                 TextInput::make('name')
                     ->live()
                     ->required()
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
-                        if (($get('slug') ?? '') !== Str::slug($old)) {
-                            return;
+                    ->rules('max:255')
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (Get $get, Set $set, $state, ?Model $record) {
+                        if (! $get('slug') && (! $record)) {
+                            $set('slug', Str::slug($state));
                         }
-
-                        $set('slug', Str::slug($state));
                     }),
                 TextInput::make('slug')
                     ->required(),

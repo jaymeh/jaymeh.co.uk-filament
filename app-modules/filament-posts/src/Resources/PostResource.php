@@ -8,6 +8,7 @@ use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use Filament\Tables\Columns;
 use Jaymeh\Posts\Models\Post;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
@@ -16,11 +17,11 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\Textarea;
-use Filament\Tables\Columns;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Jaymeh\FilamentPosts\Resources\Pages;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\SpatieTagsInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
@@ -73,7 +74,6 @@ class PostResource extends Resource
                             Tab::make('SEO')
                                 ->schema([
                                     TextInput::make('meta_description'),
-
                                 ]),
                         ])->columnSpan([
                             'md' => 2,
@@ -108,6 +108,10 @@ class PostResource extends Resource
                                 ->helperText(
                                     'The URL of the page.'
                                 ),
+                            SpatieTagsInput::make('tags')
+                                ->label('Categories')
+                                ->placeholder('New category')
+                                ->type('categories'),
                             CuratorPicker::make('featured_image_id')
                                 ->relationship('featuredImage', 'id')
                                 ->required(),
