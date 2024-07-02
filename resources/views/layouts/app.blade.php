@@ -29,10 +29,14 @@
     <body class="font-sans leading-normal text-cinder">
         @include('partials.header')
 
-        @yield('content')
+        @yield('banner')
 
-        <div class="basis-4/12 w-full">
-            @yield('sidebar')
+        <div class="page-container">
+            @yield('content')
+
+            <div class="basis-4/12 w-full">
+                @yield('sidebar')
+            </div>
         </div>
 
         @include('partials.footer')

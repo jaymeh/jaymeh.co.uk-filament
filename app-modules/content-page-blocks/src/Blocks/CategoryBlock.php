@@ -5,6 +5,7 @@ namespace Jaymeh\ContentPageBlocks\Blocks;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Collection;
 use Jaymeh\FilamentDynamicBuilder\Abstracts\PageBlockAbstract;
+use Jaymeh\Posts\Repositories\PostRepository;
 
 class CategoryBlock extends PageBlockAbstract
 {
@@ -57,9 +58,9 @@ class CategoryBlock extends PageBlockAbstract
      */
     private function getCategories(array $attributes): Collection
     {
-        $tags = resolve(config('tags.tag_model'));
+        $tagClass = config('tags.tag_model');
 
-        return $tags->where('type', 'categories')
-            ->get();
+        return $tagClass::whereHas('posts')
+            ->withCount('posts')->get();
     }
 }
