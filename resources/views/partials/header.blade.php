@@ -4,21 +4,19 @@
         <div class="grow menu">
             <div class="flex justify-center items-center box-border font-bold">
                 <ul class="box-border text-right" style="width: 200px">
-                    <li class="inline-block px-4"><a class="{{ url()->current() == '/' ? 'font-bold' : '' }} text-white" href="/">Home</a></li>
-                    <li class="inline-block px-4"><a class="{{ url()->current() == '/blog' ? 'font-bold' : '' }} text-white" href="/blog">Blog</a></li>
+                    <li class="inline-block px-4"><a class="{{ url()->current() == url('/') ? 'font-bold' : '' }} text-white" href="/">Home</a></li>
+                    <li class="inline-block px-4"><a class="{{ url()->current() == url('/blog') ? 'font-bold' : '' }} text-white" href="/blog">Blog</a></li>
                 </ul>
 
                 <div class="max-w-xs rounded inline-block px-4">
                     <a href="/">
-                        {{-- {{ asset url="/assets/profile-photo.jpeg" }}
-                            <img src="{{ glide :src="url" fm="webp" h="100" }}" alt="{{ alt }}" class="rounded-full border-fuchsia-pink border-4" />
-                        {{ /asset }} --}}
+                        <img src="{{ Vite::asset('resources/images/profile-photo.webp') }}" alt="Profile photo of me." class="rounded-full border-fuchsia-pink border-4" />
                     </a>
                 </div>
 
                 <ul class="align-middle box-border" style="width: 200px">
-                    <li class="inline-block px-4"><a class="{{ url()->current() == '/about-me' ? 'font-bold' : '' }} text-white" href="/about-me">About</a></li>
-                    <li class="inline-block px-4"><a class="{{ url()->current() == '/contact' ? 'font-bold' : '' }} text-white" href="/contact">Contact</a></li>
+                    <li class="inline-block px-4"><a class="{{ url()->current() == url('/about-me') ? 'font-bold' : '' }} text-white" href="/about-me">About</a></li>
+                    <li class="inline-block px-4"><a class="{{ url()->current() == url('/contact') ? 'font-bold' : '' }} text-white" href="/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
