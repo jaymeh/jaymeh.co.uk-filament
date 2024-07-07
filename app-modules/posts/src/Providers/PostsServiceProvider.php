@@ -6,23 +6,57 @@ use Illuminate\Support\ServiceProvider;
 
 class PostsServiceProvider extends ServiceProvider
 {
+    protected $moduleName = 'posts';
+
+    public static string $viewNamespace = 'posts';
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/posts.php', 'posts'
+            __DIR__.'/../../config/' . $this->moduleName . '.php', $this->moduleName
         );
     }
 
+    /**
+     * Handles bootstrapping of the module.
+     *
+     * @return void
+     */
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
-        $this->publishesMigrations([
-            __DIR__.'/../../database/migrations' => database_path('migrations'),
-        ]);
 
-        $this->publishes([
-            __DIR__.'/../../config/posts.php' => config_path('posts.php'),
-        ]);
+        $this->publishesMigrations(
+            [
+                __DIR__.'/../../database/migrations' => database_path('migrations'),
+            ]
+        );
+
+        $this->publishes(
+            [
+                __DIR__.'/../../config/' . $this->moduleName . '.php' => config_path(
+                    $this->moduleName . '.php'
+                ),
+            ]
+        );
+
+        $this->registerViews();
+    }
+
+    protected function registerViews()
+    {
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', static::$viewNamespace);
+        $this->publishes(
+            [
+                __DIR__.'/../../resources/views' => resource_path('views/vendor/' . static::$viewNamespace),
+            ],
+            ['posts-views']
+        );
     }
 }
