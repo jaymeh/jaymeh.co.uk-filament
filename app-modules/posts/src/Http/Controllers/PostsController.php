@@ -24,7 +24,7 @@ class PostsController
             ->published()
             ->paginate(10);
 
-        return view('posts::partials.blog', ['posts' => $posts]);
+        return view('posts-module::index', ['posts' => $posts]);
     }
 
     /**

@@ -8,7 +8,7 @@ class PostsServiceProvider extends ServiceProvider
 {
     protected $moduleName = 'posts';
 
-    public static string $viewNamespace = 'posts';
+    public static string $viewNamespace = 'posts-module';
 
     /**
      * Register services.
@@ -29,6 +29,8 @@ class PostsServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->registerViews();
+
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
 
@@ -45,8 +47,6 @@ class PostsServiceProvider extends ServiceProvider
                 ),
             ]
         );
-
-        $this->registerViews();
     }
 
     protected function registerViews()

@@ -11,10 +11,7 @@
     },
 	"autoload": {
 		"psr-4": {
-			"Jaymeh\\Posts\\": "src/",
-			"Jaymeh\\Posts\\Tests\\": "tests/",
-			"Jaymeh\\Posts\\Database\\Factories\\": "database/factories/",
-			"Jaymeh\\Posts\\Database\\Seeders\\": "database/seeders/"
+			"Jaymeh\\Posts\\": "src/"
 		}
 	},
 	"minimum-stability": "stable",
