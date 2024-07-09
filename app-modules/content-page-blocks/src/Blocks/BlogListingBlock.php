@@ -72,18 +72,17 @@ class BlogListingBlock extends PageBlockAbstract
      *
      * @param array $attributes
      *
-     * @return Collection
+     * @return mixed
      */
-    private function getPosts(array $attributes): Collection
+    private function getPosts(array $attributes)
     {
-        $posts = [];
-
         $postRepository = resolve(PostRepository::class);
 
+        $posts = [];
         if ($attributes['paginate']) {
-            $posts = $postRepository->paginate($attributes['per_page']);
+            $posts = $postRepository->orderByDesc('published_at')->paginate($attributes['per_page']);
         } else {
-            $posts = $postRepository->limit($attributes['amount_of_posts'])->get();
+            $posts = $postRepository->orderByDesc('published_at')->limit($attributes['amount_of_posts'])->get();
         }
 
         return $posts;

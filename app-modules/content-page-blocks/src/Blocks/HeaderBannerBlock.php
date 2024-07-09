@@ -54,7 +54,10 @@ class HeaderBannerBlock extends PageBlockAbstract
     protected function attributes($attributes): array
     {
         $media = app(Media::class)::where('id', $attributes['image_id'])->first();
-        $attributes['image_url'] = $media->url;
+
+        if ($media) {
+            $attributes['image_url'] = $media->url;
+        }
 
         return $attributes;
     }

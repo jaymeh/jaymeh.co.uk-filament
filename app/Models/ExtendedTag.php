@@ -11,6 +11,14 @@ class ExtendedTag extends Tag
 
     public function posts() {
         $postClass = resolve(PostRepository::class)->getModel();
-        return $this->morphedByMany($postClass, 'taggable', 'taggables', 'tag_id', 'taggable_id');
+        return $this->morphedByMany(
+            $postClass,
+            'taggable',
+            'taggables',
+            'tag_id',
+            'taggable_id',
+            'id',
+            'id'
+        );
     }
 }

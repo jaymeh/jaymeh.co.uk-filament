@@ -2,10 +2,12 @@
 
 namespace Jaymeh\Posts\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Tags\HasTags;
+use App\Models\ExtendedTag;
 use Illuminate\Database\Eloquent\Model;
 use PawelMysior\Publishable\Publishable;
-use Spatie\Tags\HasTags;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Post extends Model
 {
@@ -21,4 +23,21 @@ class Post extends Model
         'featured_image',
         'published_at',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public static function getTagClassName(): string
+    {
+        return ExtendedTag::class;
+    }
+
+    public function tags(): MorphToMany
+    {
+        return $this
+            ->morphToMany(self::getTagClassName(), 'taggable', 'taggables', null, 'tag_id')
+            ->orderBy('order_column');
+    }
 }

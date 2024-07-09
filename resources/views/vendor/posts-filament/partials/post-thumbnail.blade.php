@@ -8,6 +8,6 @@
         <a href="#"><h2 class="text-gray-900 text-xl font-semibold hover:text-governor-bay">{{ $title }}</h2></a>
         <p class="text-xs">{{ $date }}</p>
         <p class="mt-2">{{ $excerpt }}</p>
-        <p class="text-sm mt-2" ><a href="#">Continue Reading...</a></p>
+        <p class="text-sm mt-2" ><a href="{{ $url }}">Continue Reading...</a></p>
     </div>
 </article>

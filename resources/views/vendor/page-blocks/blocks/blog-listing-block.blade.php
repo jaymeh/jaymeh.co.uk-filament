@@ -7,6 +7,7 @@
             'title' => $post->title,
             'excerpt' => $post->excerpt,
             'date' => $post->published_at->format('d/m/Y'),
+            'url' => route('posts.show', $post),
         ])
     @endforeach
 </div>

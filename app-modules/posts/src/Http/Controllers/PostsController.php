@@ -19,12 +19,12 @@ class PostsController
      */
     public function index()
     {
-        // Get all published posts from Repo.
-        $posts = $this->postsRepository
-            ->published()
-            ->paginate(10);
+        // // Get all published posts from Repo.
+        // $posts = $this->postsRepository
+        //     ->published()
+        //     ->paginate(10);
 
-        return view('posts-module::index', ['posts' => $posts]);
+        // return view('posts-module::index', ['posts' => $posts]);
     }
 
     /**
