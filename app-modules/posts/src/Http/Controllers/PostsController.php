@@ -3,6 +3,8 @@
 namespace Jaymeh\Posts\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Jaymeh\FilamentPosts\Models\Post as ModelsPost;
+use Jaymeh\Posts\Models\Post;
 use Jaymeh\Posts\Repositories\PostRepository;
 
 class PostsController
@@ -32,6 +34,14 @@ class PostsController
      */
     public function show(string $slug)
     {
+        $post = $this->postsRepository
+            // ->with()
+            ->published()
+            ->where(['slug' => $slug])
+            ->firstOrFail();
 
+        return view('posts-module::post', [
+            'post' => $post,
+        ]);
     }
 }
