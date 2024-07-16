@@ -67,6 +67,11 @@ class PostResource extends Resource
                                     Textarea::make('excerpt')
                                         ->label('Summary')
                                         ->required(),
+                                    Select::make('author_id')
+                                        ->label('Author')
+                                        ->relationship('author', 'name')
+                                        ->default(auth()->id())
+                                        ->required(),
                                 ]),
                             Tab::make('Content')
                                 ->schema([
@@ -109,9 +114,6 @@ class PostResource extends Resource
                                 ->helperText(
                                     'The URL of the page.'
                                 ),
-                            Select::make('author_id')
-                                ->relationship('author', 'name')
-                                ->default(auth()->id()),
                             SpatieTagsInput::make('tags')
                                 ->label('Categories')
                                 ->placeholder('New category')
