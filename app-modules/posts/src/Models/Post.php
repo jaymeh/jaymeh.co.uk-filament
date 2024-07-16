@@ -3,9 +3,10 @@
 namespace Jaymeh\Posts\Models;
 
 use Spatie\Tags\HasTags;
-use App\Models\ExtendedTag;
+use Jaymeh\Posts\Models\ExtendedTag;
 use Illuminate\Database\Eloquent\Model;
 use PawelMysior\Publishable\Publishable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
@@ -31,7 +32,7 @@ class Post extends Model
 
     public static function getTagClassName(): string
     {
-        return ExtendedTag::class;
+        return config('tags.tag_model', ExtendedTag::class);
     }
 
     public function tags(): MorphToMany
@@ -39,5 +40,10 @@ class Post extends Model
         return $this
             ->morphToMany(self::getTagClassName(), 'taggable', 'taggables', null, 'tag_id')
             ->orderBy('order_column');
+    }
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(config('posts.user_model'), 'author_id', 'id');
     }
 }

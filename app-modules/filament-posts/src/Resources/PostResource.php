@@ -13,6 +13,7 @@ use Jaymeh\Posts\Models\Post;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Tabs\Tab;
@@ -108,6 +109,9 @@ class PostResource extends Resource
                                 ->helperText(
                                     'The URL of the page.'
                                 ),
+                            Select::make('author_id')
+                                ->relationship('author', 'name')
+                                ->default(auth()->id()),
                             SpatieTagsInput::make('tags')
                                 ->label('Categories')
                                 ->placeholder('New category')
