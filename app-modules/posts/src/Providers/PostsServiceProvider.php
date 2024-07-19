@@ -20,6 +20,8 @@ class PostsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../../config/' . $this->moduleName . '.php', $this->moduleName
         );
+
+        $this->app->register(RouteServiceProvider::class);
     }
 
     /**

@@ -24,7 +24,6 @@ use Jaymeh\FilamentPosts\Resources\Pages;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\SpatieTagsInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class PostResource extends Resource
 {
