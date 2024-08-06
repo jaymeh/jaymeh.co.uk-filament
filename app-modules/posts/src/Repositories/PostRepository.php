@@ -17,7 +17,7 @@ class PostRepository extends BaseRepository
     public function getPostsByTag(string $tag): Collection
     {
         return $this->whereHas('tags', function ($query) use ($tag) {
-            // TODO: Make my language more dynamic.
+            // TODO: Make the language more dynamic.
             $query->where('slug->en', $tag);
         })->get();
     }

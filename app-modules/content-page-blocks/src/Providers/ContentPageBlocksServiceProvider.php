@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Jaymeh\ContentPageBlocks\Blocks\CategoryBlock;
 use Jaymeh\ContentPageBlocks\Blocks\BlogListingBlock;
 use Jaymeh\ContentPageBlocks\Blocks\HeaderBannerBlock;
+use Jaymeh\ContentPageBlocks\Blocks\LatestPostsBlock;
+use Jaymeh\ContentPageBlocks\Blocks\TextBlock;
 
 class ContentPageBlocksServiceProvider extends ServiceProvider
 {
@@ -40,5 +42,7 @@ class ContentPageBlocksServiceProvider extends ServiceProvider
         new BlogListingBlock();
         new HeaderBannerBlock();
         new CategoryBlock();
+        new LatestPostsBlock();
+        new TextBlock();
     }
 }

@@ -78,7 +78,8 @@ class PostResource extends Resource
                                 ]),
                             Tab::make('SEO')
                                 ->schema([
-                                    TextInput::make('meta_description'),
+                                    TextInput::make('meta_description')
+                                        ->required(),
                                 ]),
                         ])->columnSpan([
                             'md' => 2,

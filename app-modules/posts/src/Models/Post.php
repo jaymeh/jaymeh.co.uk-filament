@@ -15,6 +15,7 @@ class Post extends Model
     use HasFactory, HasTags, Publishable;
 
     protected $fillable = [
+        'author_id',
         'title',
         'slug',
         'meta_description',
