@@ -119,6 +119,18 @@ figure figcaption {
     @apply text-white;
 }
 
+.page-content {
+    ul {
+        @apply mt-2;
+        @apply list-disc;
+        @apply ml-4;
+    }
+
+    li {
+        @apply ml-1;
+    }
+}
+
 .page-content figcaption {
     @apply w-1/2;
     @apply mx-auto;
